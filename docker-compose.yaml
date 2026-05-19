@@ -1,0 +1,41 @@
+services:
+  postgres:
+  mongodb:
+  redis:
+  kafka-broker:
+  confluent-schema-registry:
+
+
+
+  api-gateway:
+    depends_on:
+      - auth-service
+
+  auth-service:
+    depends_on:
+      - kafka-broker
+      - postgres
+
+  inventory-service:
+    depends_on:
+      - postgres
+      - product-service
+
+  notification-service:
+    depends_on:
+      - mongodb
+
+  order-service:
+    depends_on:
+      - inventory-service
+      - postgres
+
+  product-service:
+      depends_on:
+        - kafka-broker
+        - mongodb
+
+  user-service:
+      depends_on:
+        - kafka-broker
+        - postgres
