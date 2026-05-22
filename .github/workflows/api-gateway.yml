@@ -1,0 +1,17 @@
+name: Build & Push order-service
+
+on:
+  push:
+    paths: ['api-gateway/**']
+    branches: [ main ]
+  pull_request:
+    paths: ['api-gateway/**']
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  call-reusable:
+    uses: ./.github/workflows/_build-and-push-service.yml
+    with:
+      service_name: api-gateway
+    secrets: inherit
