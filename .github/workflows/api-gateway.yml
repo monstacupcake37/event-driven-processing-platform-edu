@@ -2,10 +2,10 @@ name: Build & Push api-gateway
 
 on:
   push:
-    paths: ['api-gateway/**']
+    paths: ['api-gateway/**', '!api-gateway/helm/**']
     branches: [ main ]
   pull_request:
-    paths: ['api-gateway/**']
+    paths: ['api-gateway/**', '!api-gateway/helm/**']
     branches: [ main ]
   workflow_dispatch:
 
