@@ -1,4 +1,4 @@
-name: Build & Push order-service
+name: Build & Push notification-service
 
 on:
   push:
