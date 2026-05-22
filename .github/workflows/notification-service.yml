@@ -2,10 +2,10 @@ name: Build & Push notification-service
 
 on:
   push:
-    paths: ['notification-service/**']
+    paths: ['notification-service/**', '!notification-service/helm/**']
     branches: [ main ]
   pull_request:
-    paths: ['notification-service/**']
+    paths: ['notification-service/**', '!notification-service/helm/**']
     branches: [ main ]
   workflow_dispatch:
 

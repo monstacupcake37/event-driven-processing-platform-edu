@@ -2,10 +2,10 @@ name: Build & Push inventory-service
 
 on:
   push:
-    paths: ['inventory-service/**']
+    paths: ['inventory-service/**', '!inventory-service/helm/**']
     branches: [ main ]
   pull_request:
-    paths: ['inventory-service/**']
+    paths: ['inventory-service/**', '!inventory-service/helm/**']
     branches: [ main ]
   workflow_dispatch:
 

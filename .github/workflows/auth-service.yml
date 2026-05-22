@@ -2,10 +2,10 @@ name: Build & Push auth-service
 
 on:
   push:
-    paths: ['auth-service/**']
+    paths: ['auth-service/**', '!auth-service/helm/**']
     branches: [ main ]
   pull_request:
-    paths: ['auth-service/**']
+    paths: ['auth-service/**', '!auth-service/helm/**']
     branches: [ main ]
   workflow_dispatch:
 
