@@ -22,7 +22,7 @@ jobs:
           distribution: 'temurin'
           cache: 'maven' 
       
-      - name: Run tests, coverage & threshold check
+      - name: Run checkstyle, tests, coverage & threshold check
         run: mvn verify -f ./${{ inputs.service_name }}/pom.xml
       
   build-push:
