@@ -1,0 +1,17 @@
+name: Build & Push user-service
+
+on:
+  push:
+    paths: ['user-service/**', '!user-service/helm/**']
+    branches: [ main ]
+  pull_request:
+    paths: ['user-service/**', '!user-service/helm/**']
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  call-reusable:
+    uses: ./.github/workflows/_build-and-push-service.yml
+    with:
+      service_name: user-service
+    secrets: inherit
