@@ -14,6 +14,22 @@ jobs:
       contents: read
       packages: write
     steps:
+      - name: Run Checkstyle
+        run: mvn checkstyle:check -f ./${{ inputs.service_name }}/pom.xml
+
+      # --- 2. Unit tests with coverage report ---
+      - name: Run unit tests & generate JaCoCo coverage report
+        run: mvn test jacoco:report -f ./${{ inputs.service_name }}/pom.xml
+
+      # --- 3. Enforce coverage ≥ 80% ---
+      - name: Verify code coverage threshold
+        run: |
+          # Option A: Use JaCoCo's built-in check goal (requires plugin config in pom.xml)
+          mvn jacoco:check -f ./${{ inputs.service_name }}/pom.xml \
+            -Djacoco.haltOnFailure=true \
+            -Djacoco.threshold.line=0.8 \
+            -Djacoco.threshold.branch=0.8
+      
       - uses: actions/checkout@v5
       - uses: docker/setup-buildx-action@v4
       - uses: docker/login-action@v4
