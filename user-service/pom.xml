@@ -100,18 +100,19 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-checkstyle-plugin</artifactId>
-                <version>3.6.0</version>                      <!-- Use latest stable -->
+                <version>3.6.0</version>
                 <configuration>
-                    <configLocation>google_checks.xml</configLocation>   <!-- path to rules file -->
-                    <failOnViolation>true</failOnViolation>           <!-- fail build on violation -->
-                    <consoleOutput>true</consoleOutput>               <!-- show violations in logs -->
+                    <configLocation>google_checks.xml</configLocation>
+                    <consoleOutput>true</consoleOutput>
+                    <failsOnError>true</failsOnError>
+                    <linkXRef>false</linkXRef>
                 </configuration>
                 <executions>
                     <execution>
                         <id>validate-checkstyle</id>
                         <phase>validate</phase>
                         <goals>
-                            <goal>check</goal>                        <!-- this is the goal called by CI -->
+                            <goal>check</goal>
                         </goals>
                     </execution>
                 </executions>
