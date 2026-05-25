@@ -8,7 +8,7 @@ on:
         type: string
 
 jobs:
-  test-coverage-threshold-check:
+  checkstyle-test-coverage-threshold-check:
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -21,10 +21,7 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
           cache: 'maven' 
-      - name: Run Checkstyle
-        run: mvn checkstyle:check -f ./${{ inputs.service_name }}/pom.xml
-
-      # --- 2. Unit tests with coverage report ---
+      
       - name: Run tests, coverage & threshold check
         run: mvn verify -f ./${{ inputs.service_name }}/pom.xml
       
