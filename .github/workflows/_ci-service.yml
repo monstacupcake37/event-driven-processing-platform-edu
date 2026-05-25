@@ -8,6 +8,7 @@ on:
         type: string
 
 jobs:
+  test-coverage-threshold-check:
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -27,7 +28,12 @@ jobs:
       - name: Run tests, coverage & threshold check
         run: mvn verify -f ./${{ inputs.service_name }}/pom.xml
       
-      
+  build-push:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    steps:
       - uses: docker/setup-buildx-action@v4
       - uses: docker/login-action@v4
         with:
