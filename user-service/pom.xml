@@ -122,26 +122,9 @@
                 <artifactId>jacoco-maven-plugin</artifactId>
                 <version>0.8.12</version>
                 <executions>
-<!--                    &lt;!&ndash; Execution to prepare the agent &ndash;&gt;-->
-<!--                    <execution>-->
-<!--                        <id>default-prepare-agent</id>-->
-<!--                        <goals>-->
-<!--                            <goal>prepare-agent</goal>-->
-<!--                        </goals>-->
-<!--                    </execution>-->
-<!--                    &lt;!&ndash; Execution to generate the report &ndash;&gt;-->
-<!--                    <execution>-->
-<!--                        <id>default-report</id>-->
-<!--                        <goals>-->
-<!--                            <goal>report</goal>-->
-<!--                        </goals>-->
-<!--                    </execution>-->
-<!--                    &lt;!&ndash; FIX: Add the rules block to the check execution &ndash;&gt;-->
                     <execution>
                         <id>check</id>
-                        <goals>
-                            <goal>check</goal>
-                        </goals>
+                        <goals><goal>check</goal></goals>
                         <configuration>
                             <excludes>
                                 <exclude>**/UserServiceApplication.class</exclude>
@@ -152,6 +135,11 @@
                                     <limits>
                                         <limit>
                                             <counter>LINE</counter>
+                                            <value>COVEREDRATIO</value>
+                                            <minimum>0.80</minimum>
+                                        </limit>
+                                        <limit>
+                                            <counter>BRANCH</counter>
                                             <value>COVEREDRATIO</value>
                                             <minimum>0.80</minimum>
                                         </limit>
