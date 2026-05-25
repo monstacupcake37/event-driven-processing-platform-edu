@@ -27,7 +27,7 @@ jobs:
       
   build-push:
     runs-on: ubuntu-latest
-    needs: test-coverage-threshold-check
+    needs: checkstyle-test-coverage-threshold-check
     permissions:
       contents: read
       packages: write
