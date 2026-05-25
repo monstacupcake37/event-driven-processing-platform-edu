@@ -1,4 +1,4 @@
-name: Reusable - Build and Push a Microservice
+name: Reusable - CI/CD Pipeline for a Microservice
 
 on:
   workflow_call:
