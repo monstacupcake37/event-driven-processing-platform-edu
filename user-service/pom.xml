@@ -102,7 +102,7 @@
                 <artifactId>maven-checkstyle-plugin</artifactId>
                 <version>3.6.0</version>                      <!-- Use latest stable -->
                 <configuration>
-                    <configLocation>checkstyle.xml</configLocation>   <!-- path to rules file -->
+                    <configLocation>google_checks.xml</configLocation>   <!-- path to rules file -->
                     <failOnViolation>true</failOnViolation>           <!-- fail build on violation -->
                     <consoleOutput>true</consoleOutput>               <!-- show violations in logs -->
                 </configuration>
