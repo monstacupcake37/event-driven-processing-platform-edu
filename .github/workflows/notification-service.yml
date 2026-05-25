@@ -11,7 +11,7 @@ on:
 
 jobs:
   call-reusable:
-    uses: ./.github/workflows/_build-and-push-service.yml
+    uses: ./.github/workflows/_ci-service.yml
     with:
       service_name: notification-service
     secrets: inherit
