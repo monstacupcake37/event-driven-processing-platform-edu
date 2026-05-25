@@ -12,7 +12,6 @@
         <module name="auth-service" />
         <module name="inventory-service" />
         <module name="api-gateway" />
-        <module name="product-service" />
         <module name="order-service" />
         <module name="notification-service" />
       </profile>
@@ -24,6 +23,7 @@
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.46/lombok-1.18.46.jar" />
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.46/lombok-1.18.46.jar" />
         </processorPath>
+        <module name="product-service" />
         <module name="user-service" />
       </profile>
     </annotationProcessing>
