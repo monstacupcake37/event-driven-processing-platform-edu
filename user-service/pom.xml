@@ -97,6 +97,24 @@
                     </execution>
                 </executions>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-checkstyle-plugin</artifactId>                 <!-- Use latest stable -->
+                <configuration>
+                    <configLocation>checkstyle.xml</configLocation>   <!-- path to rules file -->
+                    <failOnViolation>true</failOnViolation>           <!-- fail build on violation -->
+                    <consoleOutput>true</consoleOutput>               <!-- show violations in logs -->
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>validate-checkstyle</id>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>check</goal>                        <!-- this is the goal called by CI -->
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
 
