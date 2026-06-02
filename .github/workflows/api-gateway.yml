@@ -2,7 +2,7 @@ name: Build & Push api-gateway
 
 on:
   push:
-    paths: ['./.github/workflows/_ci-service.yml', './.github/workflows/api-gateway.yml', 'api-gateway/**', '!api-gateway/helm/**']
+    paths: ['.github/workflows/_ci-service.yml', '.github/workflows/api-gateway.yml', 'api-gateway/**', '!api-gateway/helm/**']
     branches: [ main ]
   pull_request:
     paths: ['./.github/workflows/_ci-service.yml', './.github/workflows/api-gateway.yml', 'api-gateway/**', '!api-gateway/helm/**']
