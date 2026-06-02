@@ -2,10 +2,10 @@ name: Build & Push notification-service
 
 on:
   push:
-    paths: ['notification-service/**', '!notification-service/helm/**']
+    paths: ['./.github/workflows/_ci-service.yml', './.github/workflows/notification-service.yml', 'notification-service/**', '!notification-service/helm/**']
     branches: [ main ]
   pull_request:
-    paths: ['notification-service/**', '!notification-service/helm/**']
+    paths: ['./.github/workflows/_ci-service.yml', './.github/workflows/notification-service.yml', 'notification-service/**', '!notification-service/helm/**']
     branches: [ main ]
   workflow_dispatch:
 
