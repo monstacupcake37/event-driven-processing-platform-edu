@@ -2,10 +2,10 @@ name: Build & Push order-service
 
 on:
   push:
-    paths: ['./.github/workflows/_ci-service.yml', './.github/workflows/order-service.yml', 'order-service/**', '!order-service/helm/**']
+    paths: ['.github/workflows/_ci-service.yml', '.github/workflows/order-service.yml', 'order-service/**', '!order-service/helm/**']
     branches: [ main ]
   pull_request:
-    paths: ['./.github/workflows/_ci-service.yml', './.github/workflows/order-service.yml', 'order-service/**', '!order-service/helm/**']
+    paths: ['.github/workflows/_ci-service.yml', '.github/workflows/order-service.yml', 'order-service/**', '!order-service/helm/**']
     branches: [ main ]
   workflow_dispatch:
 
