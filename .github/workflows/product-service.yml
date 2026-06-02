@@ -2,10 +2,10 @@ name: Build & Push product-service
 
 on:
   push:
-    paths: ['product-service/**', '!product-service/helm/**']
+    paths: ['./.github/workflows/_ci-service.yml', './.github/workflows/product-service.yml', 'product-service/**', '!product-service/helm/**'']
     branches: [ main ]
   pull_request:
-    paths: ['product-service/**', '!product-service/helm/**']
+    paths: ['./.github/workflows/_ci-service.yml', './.github/workflows/product-service.yml', 'product-service/**', '!product-service/helm/**'']
     branches: [ main ]
   workflow_dispatch:
 
