@@ -1,6 +1,5 @@
 name: Reusable - CI/CD Pipeline for a Microservice
-#test1
-#test2
+
 on:
   workflow_call:
     inputs:
