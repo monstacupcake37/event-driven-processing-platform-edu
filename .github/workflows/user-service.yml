@@ -2,10 +2,10 @@ name: Build & Push user-service
 
 on:
   push:
-    paths: ['./.github/workflows/_ci-service.yml', './.github/workflows/user-service.yml', 'user-service/**', '!user-service/helm/**']
+    paths: ['.github/workflows/_ci-service.yml', '.github/workflows/user-service.yml', 'user-service/**', '!user-service/helm/**']
     branches: [ main ]
   pull_request:
-    paths: ['./.github/workflows/_ci-service.yml', './.github/workflows/user-service.yml', 'user-service/**', '!user-service/helm/**']
+    paths: ['.github/workflows/_ci-service.yml', '.github/workflows/user-service.yml', 'user-service/**', '!user-service/helm/**']
     branches: [ main ]
   workflow_dispatch:
 
