@@ -2,15 +2,18 @@ services:
 #  add volumes to postgress mongo redis kafka confluent
   postgres:
     image: postgres:17
-    container_name: postgres_db
+    container_name: postgres
     environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
-      POSTGRES_DB: person
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: adminpass
+      POSTGRES_MULTIPLE_DATABASES: "auth_db:auth_user:auth_pass"
     ports:
       - "5432:5432"
+    volumes:
+      - ./infrastructure/database/init-multiple-dbs.sh:/docker-entrypoint-initdb.d/init-multiple-dbs.sh
+      - pg_data:/var/lib/postgresql/data
     healthcheck:
-      test: [ "CMD-SHELL", "pg_isready -U postgres -p 5432" ]
+      test: [ "CMD-SHELL", "pg_isready -U admin -p 5432" ]
       interval: 10s
       timeout: 5s
       retries: 20
@@ -181,4 +184,5 @@ services:
         condition:
           service_healthy
 
-
+volumes:
+  pg_data:
